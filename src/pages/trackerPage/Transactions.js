@@ -10,8 +10,6 @@ export default class Transactions extends React.Component {
   
   };
 
-  
-
   render() {
     console.log(this.props.giveMeTransactions)
     
