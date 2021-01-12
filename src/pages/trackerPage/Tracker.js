@@ -6,25 +6,25 @@ import Transactions from './Transactions';
 
 export default class Tracker extends React.Component {
   state = {
-    transactions: []
-  }
+    transactions: [],
+  };
 
   giveMeTransactions = (TransactionsArray) => {
     // console.log(TransactionsArray);
     this.setState((prevState) => {
       return {
-        transactions: [TransactionsArray, ...prevState.transactions]
-      }
-    })
-  }
+        transactions: [TransactionsArray, ...prevState.transactions],
+      };
+    });
+  };
 
   render() {
-    console.log(this.state.transactions);
+    const {transactions} = this.state;
     return (
       <>
         <Balance />
         <ExpenseIncome />
-        <History />
+        <History transactions={transactions} />
         <Transactions giveMeTransactions={this.giveMeTransactions} />
       </>
     );
