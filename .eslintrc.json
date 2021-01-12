@@ -2,6 +2,7 @@
     "env": {
         "browser": true,
         "es2021": true
+   
     },
     "extends": [
         "plugin:react/recommended",
@@ -15,6 +16,7 @@
             "jsx": true
         },
         "ecmaVersion": 12,
+        "es6": true,
         "sourceType": "module"
     },
     "plugins": [
@@ -23,7 +25,10 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "prettier/prettier": ["error", { "singleQuote": true }]
-
+        "prettier/prettier": ["error", { "singleQuote": true }],
+        "react/state-in-constructor": [0, "never"],
+        "import/no-named-as-default": 0
+        
+        
     }
 }
