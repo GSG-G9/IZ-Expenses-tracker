@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// eslint-disable-next-line import/no-named-as-default-member
 import Tracker from './pages/trackerPage/Tracker';
 import About from './pages/About';
 import OurMission from './pages/landingPage/landing';
