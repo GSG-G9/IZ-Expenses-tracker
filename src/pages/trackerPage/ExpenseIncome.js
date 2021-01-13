@@ -1,12 +1,18 @@
 /* eslint-disable no-return-assign */
-import React from "react";
-import propTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class ExpenseIncome extends React.Component {
-  state = {
-    incomeExpense: [0, 0],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      incomeExpense: [0, 0],
+    };
+  }
+
   calculateIncomeExpense = (transactions) => {
+    const { giveMeIncomeExpense } = this.props;
+    const { incomeExpense } = this.state;
     const positivePrices = [];
     const negativePrices = [];
 
@@ -28,14 +34,15 @@ export default class ExpenseIncome extends React.Component {
         incomeExpense: [income, expense],
       },
       () => {
-        this.props.giveMeIncomeExpense(this.state.incomeExpense);
+        giveMeIncomeExpense(incomeExpense);
       }
     );
-  };
-
+  }
+  
   componentDidUpdate(prevProps) {
     const { transactions } = this.props;
-
+    // eslint-disable-next-line no-console
+    console.log('hi');
     if (transactions !== prevProps.transactions) {
       this.calculateIncomeExpense(transactions);
     }
@@ -43,18 +50,19 @@ export default class ExpenseIncome extends React.Component {
 
   render() {
     const { incomeExpense } = this.state;
-    console.log("incoooomeExponse", incomeExpense);
+    // eslint-disable-next-line no-console
+    console.log('incomeExpense', incomeExpense);
 
     return (
       <>
         <section className="income-expense-section">
           <div className="income-container">
             <p>income</p>
-            <p>${incomeExpense[0]} </p>
+            <p>{incomeExpense[0]}</p>
           </div>
           <div className="expense-container">
             <p>expense</p>
-            <p>${incomeExpense[1]} </p>
+            <p>{incomeExpense[1]}</p>
           </div>
           <div />
         </section>
@@ -64,6 +72,8 @@ export default class ExpenseIncome extends React.Component {
 }
 
 ExpenseIncome.propTypes = {
-  transactions: propTypes.array,
-  giveMeIncomeExpense: propTypes.func,
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({ text: PropTypes.string, price: PropTypes.number })
+  ).isRequired,
+  giveMeIncomeExpense: PropTypes.func.isRequired,
 };

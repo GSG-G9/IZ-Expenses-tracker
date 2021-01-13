@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 export default class Transactions extends React.Component {
   handelSubmit = (e) => {
+    const { giveMeTransactions } = this.props;
     e.preventDefault();
     const text = e.target.elements[0].value;
     const price = e.target.elements[1].value;
-    this.props.giveMeTransactions({ text, price });
-  };
+    giveMeTransactions({ text, price });
+  }
 
   render() {
-
     return (
       <>
         <form className="transaction-form" onSubmit={this.handelSubmit}>
@@ -29,5 +29,5 @@ export default class Transactions extends React.Component {
 }
 
 Transactions.propTypes = {
-  giveMeTransactions: PropTypes.func,
+  giveMeTransactions: PropTypes.func.isRequired,
 };

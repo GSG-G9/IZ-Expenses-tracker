@@ -1,5 +1,5 @@
-import React from "react";
-import propTypes from "prop-types";
+import React from 'react';
+import propTypes from 'prop-types';
 
 const Balance = ({ balance }) => {
   return (
@@ -11,7 +11,7 @@ const Balance = ({ balance }) => {
 };
 
 Balance.propTypes = {
-  balance: propTypes.number,
+  balance: propTypes.number.isRequired,
 };
 
 export default Balance;
