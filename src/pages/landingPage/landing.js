@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 import '../../App.css';
+import piccow from './piccow.svg';
 
 const OurMission = () => {
   return (
@@ -12,6 +13,7 @@ const OurMission = () => {
           keeping track of your money exchanges, incomes and outcomes, here you
           will find all the help you need to manage your money!!
         </p>
+        <img src={piccow} alt="saver pig" />
       </section>
     </>
   );
