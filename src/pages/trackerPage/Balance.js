@@ -1,14 +1,17 @@
-import React from 'react';
+import React from "react";
+import propTypes from "prop-types";
 
-export default class Balance extends React.Component {
-  render() {
-    this.state = {
-      transaction: [],
-    };
-    return (
-      <>
-        <p>balance component</p>
-      </>
-    );
-  }
-}
+const Balance = ({ balance }) => {
+  return (
+    <section className="balanceSection">
+      <p>your balance</p>
+      <p>{balance}</p>
+    </section>
+  );
+};
+
+Balance.propTypes = {
+  balance: propTypes.number,
+};
+
+export default Balance;
