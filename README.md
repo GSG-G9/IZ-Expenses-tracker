@@ -1,5 +1,5 @@
 # IZ Expenses Tracker
- - ## this app was created by Iman and Zein to help you keep track of your money incomes and outcomes
+ - this app was created by Iman and Zein to help you keep track of your money incomes and outcomes.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
