@@ -1,11 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import '../../App.css';
 
 const Balance = ({ balance }) => {
   return (
     <section className="balanceSection">
-      <p>your balance</p>
-      <p>{balance}</p>
+      <p className="balance">your balance</p>
+      <p className="balance-value">{balance}</p>
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import '../App.css';
 
 const Back = withRouter(({ history }) => (
   <button

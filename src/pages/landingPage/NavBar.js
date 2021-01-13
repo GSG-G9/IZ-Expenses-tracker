@@ -1,22 +1,36 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../App.css';
 
 const NavBar = () => {
   return (
     <>
-      <nav>
+      <nav className="nav">
+        <p className="logo">
+          I<span>Z</span>
+          TRACKER
+        </p>
         <ul className="nav-bar">
-          <li>
-            <Link to="/">ourMission</Link>
+          <li className="nav-links">
+            <Link className="link" to="/">
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/about">About us</Link>
+          <li className="nav-links">
+            <Link className="link" to="/about">
+              About us
+            </Link>
           </li>
-          <li>
-            <Link to="/tracker">tracker</Link>
+          <li className="nav-links">
+            <Link className="link" to="/tracker">
+              Tracker
+            </Link>
           </li>
-          <li>
-            <Link to="/contactus">contact us</Link>
+          <li className="nav-links">
+            <Link className="link" to="/contactus">
+              Contact us
+            </Link>
           </li>
         </ul>
       </nav>
