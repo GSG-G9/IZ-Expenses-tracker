@@ -6,6 +6,7 @@ import About from './pages/About';
 import OurMission from './pages/landingPage/landing';
 // eslint-disable-next-line import/no-named-as-default-member
 import ContactUs from './pages/Contactus';
+import './App.css';
 
 function App() {
   return (

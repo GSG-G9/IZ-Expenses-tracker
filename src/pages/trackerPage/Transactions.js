@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../App.css';
 
 export default class Transactions extends React.Component {
   handelSubmit = (e) => {
@@ -14,7 +15,7 @@ export default class Transactions extends React.Component {
     return (
       <>
         <form className="transaction-form" onSubmit={this.handelSubmit}>
-          <p>Add new transactions</p>
+          <p className="transaction-title">Add new transactions</p>
           <input
             className="form-input"
             placeholder="e.g, clothes"

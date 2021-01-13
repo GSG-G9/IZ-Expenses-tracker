@@ -1,6 +1,7 @@
 /* eslint-disable no-return-assign */
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../App.css';
 
 export default class ExpenseIncome extends React.Component {
   constructor(props) {
@@ -57,12 +58,12 @@ export default class ExpenseIncome extends React.Component {
       <>
         <section className="income-expense-section">
           <div className="income-container">
-            <p>income</p>
-            <p>{incomeExpense[0]}</p>
+            <p className="income">income</p>
+            <p className="income-value">{incomeExpense[0]}</p>
           </div>
           <div className="expense-container">
-            <p>expense</p>
-            <p>{incomeExpense[1]}</p>
+            <p className="expense">expense</p>
+            <p className="expense-value">{incomeExpense[1]}</p>
           </div>
           <div />
         </section>

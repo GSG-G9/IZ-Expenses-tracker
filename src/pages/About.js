@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import '../App.css';
 
 const Button = withRouter(({ history }) => (
   <button
@@ -27,14 +29,24 @@ const Back = withRouter(({ history }) => (
 
 const About = () => {
   return (
-    <section className="about-us">
-      <p className="about-us-tag">
-        We are Iman and Zein, we created this app to help you keep track of your
-        money movements and exchanges, for further questions please
-        <Button />
-        <Back />
-      </p>
-    </section>
+    <>
+      <nav className="nav">
+        <p className="logo-pages">
+          I<span>Z</span>
+          TRACKER
+        </p>
+      </nav>
+      <section className="about-us">
+        <p className="about-us-tag">
+          We are Iman and Zein, we created this app to help you keep track of
+          your money movements and exchanges, for further questions please
+        </p>
+        <div className="btns">
+          <Button />
+          <Back />
+        </div>
+      </section>
+    </>
   );
 };
 export default About;

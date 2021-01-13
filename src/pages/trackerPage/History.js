@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../App.css';
 
 const History = (props) => {
   const { transactions } = props;
@@ -20,7 +21,7 @@ const History = (props) => {
 
   return (
     <>
-      <p>History</p>
+      <p className="history-container">History</p>
       <AddTransaction />
     </>
   );

@@ -6,6 +6,7 @@ import Balance from './Balance';
 import ExpenseIncome from './ExpenseIncome';
 import History from './History';
 import Transactions from './Transactions';
+import '../../App.css';
 
 const Back = withRouter(({ history }) => (
   <button
