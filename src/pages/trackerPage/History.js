@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class History extends React.Component {
-  AddTransaction = () => {
-    const { transactions } = this.props;
-
-    return transactions.map(({ text, price }, index) => {
+const History = (props) => {
+  const { transactions } = props;
+  const AddTransaction = () => {
+    return transactions.map(({ text, price }) => {
       return (
         <div
           className="transaction-item"
-          key={index}
-          style={{ border: price > 0 ? "1px solid green" : "1px solid red" }}
+          key={text + price}
+          style={{ border: price > 0 ? '1px solid green' : '1px solid red' }}
         >
           <p className="transaction-text">{text}</p>
           <p className="transaction-price">{price}</p>
@@ -19,18 +18,18 @@ class History extends React.Component {
     });
   };
 
-  render() {
-    return (
-      <>
-        <p>History</p>
-        <this.AddTransaction />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <p>History</p>
+      <AddTransaction />
+    </>
+  );
+};
 
 History.propTypes = {
-  transactions: PropTypes.array,
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({ text: PropTypes.string, price: PropTypes.number })
+  ).isRequired,
 };
 
 export default History;
