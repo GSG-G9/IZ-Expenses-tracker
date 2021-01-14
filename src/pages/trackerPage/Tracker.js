@@ -6,6 +6,7 @@ import Balance from './Balance';
 import ExpenseIncome from './ExpenseIncome';
 import History from './History';
 import Transactions from './Transactions';
+import NavBar from '../landingPage/NavBar'
 import '../../App.css';
 
 const Back = withRouter(({ history }) => (
@@ -37,14 +38,15 @@ export default class Tracker extends React.Component {
     });
   }
 
-  giveMeIncomeExpense = (incomeExpenseArray) => {
-    this.setState({ balance: incomeExpenseArray[0] - incomeExpenseArray[1] });
+  giveMeIncomeExpense = (balance) => {
+    this.setState({ balance: balance });
   }
 
   render() {
     const { transactions, balance } = this.state;
     return (
       <>
+        <NavBar />
         <Balance balance={balance} />
         <ExpenseIncome
           transactions={transactions}
@@ -53,7 +55,7 @@ export default class Tracker extends React.Component {
         <History transactions={transactions} />
         <Transactions giveMeTransactions={this.giveMeTransactions} />
         <Back />
-      </>
+        </>
     );
   }
 }

@@ -8,9 +8,11 @@ const History = (props) => {
     return transactions.map(({ text, price }) => {
       return (
         <div
-          className="transaction-item"
+          className="transaction-item-container"
           key={text + price}
-          style={{ border: price > 0 ? '1px solid green' : '1px solid red' }}
+          style={{
+            border: price > 0 ? '1px solid #33E75A' : '1px solid #F31515',
+          }}
         >
           <p className="transaction-text">{text}</p>
           <p className="transaction-price">{price}</p>
@@ -20,10 +22,11 @@ const History = (props) => {
   };
 
   return (
-    <>
-      <p className="history-container">History</p>
+    <div className="history-container">
+      <p className="history">History</p>
+      <hr className="history-hr" />
       <AddTransaction />
-    </>
+    </div>
   );
 };
 

@@ -35,7 +35,7 @@ export default class ExpenseIncome extends React.Component {
         incomeExpense: [income, expense],
       },
       () => {
-        giveMeIncomeExpense(incomeExpense);
+        giveMeIncomeExpense(this.state.incomeExpense[0] - this.state.incomeExpense[1]);
       }
     );
   }
@@ -43,7 +43,6 @@ export default class ExpenseIncome extends React.Component {
   componentDidUpdate(prevProps) {
     const { transactions } = this.props;
     // eslint-disable-next-line no-console
-    console.log('hi');
     if (transactions !== prevProps.transactions) {
       this.calculateIncomeExpense(transactions);
     }

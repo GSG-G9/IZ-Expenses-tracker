@@ -16,13 +16,14 @@ export default class Transactions extends React.Component {
       <>
         <form className="transaction-form" onSubmit={this.handelSubmit}>
           <p className="transaction-title">Add new transactions</p>
+          <hr className="transaction-item-line"></hr>
           <input
             className="form-input"
             placeholder="e.g, clothes"
             type="text"
           />
           <input className="form-input" placeholder="-100" type="number" />
-          <button type="submit">Add Transaction</button>
+          <button className="submit-transaction-btn"   type="submit">Add Transaction</button>
         </form>
       </>
     );
